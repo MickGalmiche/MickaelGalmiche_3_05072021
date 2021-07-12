@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
+body {
+  margin: 0;
+  font-family: "Roboto";
+  font-size: 0.9rem;
+}
+
+.header {
+  display: grid;
+  grid-template-areas: "headerArrow headerLogo";
+  grid-template-columns: 1fr 6fr 1fr;
+  justify-items: center;
+  align-items: center;
+  box-shadow: 0px 2px 4px 0px rgba(131, 131, 131, 0.7);
+}
+
+.header__title {
+  grid-area: headerLogo;
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.header__arrow {
+  grid-area: headerArrow;
+  font-size: 1.2rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.location {
+  padding: 0 20px;
+}
+
+.overview, .function, .cards {
+  padding: 20px;
+}
+
+.location, .overview {
+  text-align: center;
+}
+
+.location {
+  background-color: gainsboro;
+}
+
+.overview {
+  background-color: whitesmoke;
+}
+
+.overview__button, .command__button {
+  color: white;
+  font-weight: bold;
+  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  border: none;
+  border-radius: 1.5rem;
+  padding: 12px 20px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px 0px rgba(131, 131, 131, 0.7);
+}
+
+.function ul {
+  padding: 0;
+  list-style: none;
+}
+
+.function__item {
+  font-size: 0.9rem;
+  font-weight: bold;
+  background-color: whitesmoke;
+  margin: 10px;
+  padding: 20px 0;
+  border-radius: 1.4em;
+  display: grid;
+  grid-template-columns: 35px 35px 1fr;
+  justify-items: start;
+  align-items: center;
+  box-shadow: 0px 2px 4px 0px rgba(131, 131, 131, 0.7);
+}
+
+.function-item__label {
+  color: white;
+  background-color: #9356DC;
+  border-radius: 50%;
+  padding: 2px 7px;
+  position: relative;
+  right: 10px;
+}
+
+.function-item__icon {
+  color: grey;
+}
+
+.cards {
+  background-color: whitesmoke;
+}
+
+.card {
+  margin: 20px 0;
+  background-color: white;
+  border-radius: 0.7em;
+  box-shadow: 0px 2px 4px 0px rgba(131, 131, 131, 0.7);
+}
+
+.card__body {
+  position: relative;
+  display: block;
+}
+
+.card__img {
+  width: 100%;
+  height: 160px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.5em 0.5em 0 0;
+}
+
+.card__badge-new {
+  background-color: #99E2D0;
+  color: green;
+  border-radius: 0.2em;
+  padding: 5px 10px;
+  font-size: 0.8em;
+  font-weight: bold;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.card__caption {
+  display: grid;
+  grid-template-columns: 1fr 30px;
+  grid-template-areas: "captionTitle captionFav" "captionTxt captionFav";
+  justify-items: stretch;
+  align-items: center;
+  padding: 10px;
+}
+
+.card__caption h3 {
+  grid-area: captionTitle;
+}
+
+.card__caption p {
+  grid-area: captionTxt;
+}
+
+.card__caption div {
+  grid-area: captionFav;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.card__caption h3, .card__caption p {
+  margin: 0;
+}
+
+.menu__heading {
+  background-size: cover;
+  height: 400px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.menu__heading--menu1 {
+  background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+}
+
+.menu__heading--menu2 {
+  background-image: url(../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+}
+
+.menu__heading--menu3 {
+  background-image: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+}
+
+.menu__heading--menu4 {
+  background-image: url(../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+}
+
+.menu__title {
+  background-color: whitesmoke;
+  border-radius: 1.8em 1.8em 0 0;
+  padding: 40px 20px;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Shrikhand";
+}
+
+.menu {
+  background-color: whitesmoke;
+}
+
+.menu__appetizer, .menu__main-dish, .menu__dessert {
+  padding: 0 20px;
+}
+
+.menu article {
+  background-color: white;
+  border-radius: 0.8em;
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: 4fr 1fr -webkit-min-content;
+  grid-template-columns: 4fr 1fr min-content;
+  grid-template-areas: "itemTitle itemTitle itemValid" "itemDescription itemPrice itemValid";
+  align-items: stretch;
+  place-content: center;
+  box-shadow: 0px 2px 4px 0px rgba(131, 131, 131, 0.7);
+}
+
+.menu__item h4 {
+  grid-area: itemTitle;
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.1em;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.menu__description {
+  grid-area: itemDescription;
+  margin: 0;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  font-size: 0.9em;
+}
+
+.menu__price {
+  grid-area: itemPrice;
+  margin: 0;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.validateButton {
+  grid-area: itemValid;
+  background-color: #99E2D0;
+  color: white;
+  border-radius: 0 0.5em 0.5em 0;
+  cursor: pointer;
+  display: block;
+  padding: 20px 17px;
+  font-size: 1.4em;
+}
+
+.menu__command {
+  padding: 20px;
+  text-align: center;
+}
+
+footer {
+  background-color: #353535;
+  color: white;
+  padding-bottom: 20px;
+}
+
+.footer ul {
+  margin: 0;
+}
+
+.footer li {
+  list-style: none;
+  padding: 2px;
+}
+
+.footer__logo {
+  display: inline-block;
+  -webkit-mask: url(/Assets/images/logo/ohmyfood@2x.svg) no-repeat;
+          mask: url(/Assets/images/logo/ohmyfood@2x.svg) no-repeat;
+  -webkit-mask-size: 50%;
+          mask-size: 50%;
+  background-color: white;
+  width: 200px;
+  height: 15px;
+  margin: 20px 0;
+}
+
+.footer__contact {
+  text-decoration: none;
+  color: white;
+}
