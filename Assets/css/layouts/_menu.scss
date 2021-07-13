@@ -1,0 +1,25 @@
+.menu {
+    background-color: $bg-color-secondary;
+    &__heading {
+        background-size: cover;
+        height: 400px;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+
+        @include header-img($menu-bg-img);
+    }
+    &__title {
+        background-color: $bg-color-secondary;
+        border-radius: 1.8em 1.8em 0 0;
+        padding: map-get($padding, large);
+        margin: map-get($margin, none);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-family: $font-secondary;
+    }
+    &__appetizer, &__main-dish, &__dessert {
+        padding: map-get($padding, none) map-get($padding, large);
+    }
+}

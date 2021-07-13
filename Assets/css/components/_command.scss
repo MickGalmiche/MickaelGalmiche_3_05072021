@@ -1,0 +1,7 @@
+.command {
+    padding: map-get($padding, large);
+    text-align: center;
+    &__button{
+        @extend %button;
+    }
+}

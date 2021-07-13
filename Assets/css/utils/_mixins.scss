@@ -1,0 +1,11 @@
+@mixin box-shadow($color: $shadow-color, $size: $shadow-size) {
+    box-shadow: 0 $size $size 0 $color;
+}
+
+@mixin header-img($menus) {
+    @each $menu, $img in $menus {
+        &--#{$menu} {
+            background-image: url($img);
+        }
+    }
+}

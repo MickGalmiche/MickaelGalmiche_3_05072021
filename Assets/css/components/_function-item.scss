@@ -1,0 +1,31 @@
+.function-item{
+    font-size: .9rem;
+    font-weight: bold;
+    background-color: $bg-color-secondary;
+    margin: map-get($margin, large) map-get($margin, medium);
+    padding: map-get($padding, large) map-get($padding, none);
+    border-radius: 1.4em;
+    display: grid;
+    grid-template-columns: 35px 35px 1fr;
+    justify-items: start;
+    align-items: center;
+    cursor: pointer;
+    @include box-shadow;
+    &:hover {
+        background-color: lighten($color-primary, 35%);
+        .function-item__icon {
+            color: $color-primary;
+        }
+    }
+    &__label {
+        color: $bg-color-primary;
+        background-color: $color-primary;
+        border-radius: 50%;
+        padding: map-get($padding, xsmall) map-get($padding, small);
+        position: relative;
+        right: 10px;
+    }
+    &__icon {
+        color: darken($bg-color-primary, 50%);
+    }
+}

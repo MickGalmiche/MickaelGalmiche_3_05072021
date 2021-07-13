@@ -1,0 +1,21 @@
+.header {
+    display: grid;
+    grid-template-areas: "headerArrow headerLogo";
+    grid-template-columns: 1fr 6fr 1fr;
+    justify-items: center;
+    align-items: center;
+    @include box-shadow;
+    &__title {
+        grid-area: headerLogo;
+        margin: 0;
+        padding-top: map-get($padding, large);
+        padding-bottom: map-get($padding, medium);
+    }
+    a {
+        color: darken($bg-color-primary, 100%);
+    }
+    &__arrow {
+        grid-area: headerArrow;
+        font-size: 1.2rem;
+    }
+}

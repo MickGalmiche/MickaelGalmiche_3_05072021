@@ -1,0 +1,44 @@
+.menu-item {
+    background-color: $bg-color-primary;
+    border-radius: .8em;
+    margin: map-get($margin, large) map-get($margin, none);
+    display: grid;
+    grid-template-columns: 4fr 1fr min-content;
+    grid-template-areas:
+    "itemTitle itemTitle itemValid"
+    "itemDescription itemPrice itemValid";
+    align-items: stretch;
+    place-content: center;
+    @include box-shadow;
+    &__title {
+        grid-area: itemTitle;
+        margin: 0;
+        font-weight: bold;
+        font-size: 1.1em;
+        padding-top: map-get($padding, medium);
+        padding-left: map-get($padding, medium);
+    }
+    &__description {
+        grid-area: itemDescription;
+        margin: 0;
+        padding-left: map-get($padding, medium);
+        padding-bottom: map-get($padding, medium);
+        font-size: .9em;
+    }
+    &__price {
+        grid-area: itemPrice;
+        margin: map-get($margin, none);
+        text-align: center;
+        padding-bottom: map-get($padding, medium);
+    }
+    &__button {
+        grid-area: itemValid;
+        background-color: $color-tertiary;
+        color: $bg-color-primary;
+        border-radius: 0 .5em .5em 0;
+        cursor: pointer;
+        display: block;
+        padding: map-get($padding, large) map-get($padding, medium );
+        font-size: 1.4em;
+    }
+}

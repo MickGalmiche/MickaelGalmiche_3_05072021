@@ -1,0 +1,6 @@
+.cards {
+    background-color: $bg-color-secondary;
+    padding: map-get($padding, large);
+    display: flex;
+    flex-direction: column;
+}

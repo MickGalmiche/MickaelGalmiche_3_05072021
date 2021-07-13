@@ -1,0 +1,19 @@
+%button {
+    color: $bg-color-primary;
+    font-weight: bold;
+    background-image: linear-gradient(to bottom right, $color-secondary, $color-primary );
+    border: none;
+    border-radius: 1.5rem;
+    padding: map-get($padding, medium) map-get($padding, large);
+    margin-bottom: map-get($margin, large);
+    cursor: pointer;
+    @include box-shadow;
+    &:hover {
+        transform: scale(1.04);
+        background-image: linear-gradient(to bottom right, lighten($color-secondary,4%), lighten($color-primary, 4%));
+        @include box-shadow($shadow-color,.6em);
+    }
+    &:active {
+        transform: scale(1);
+    }
+}

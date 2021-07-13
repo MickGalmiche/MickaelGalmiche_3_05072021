@@ -1,0 +1,25 @@
+.footer {
+    background-color: darken($bg-color-primary, 80%);
+    color: $bg-color-primary;
+    padding-bottom: map-get($padding, large);
+    ul {
+        margin: map-get($margin, none);
+        li {
+            list-style: none;
+            padding: map-get($padding, xsmall);
+        }
+    }
+    &__logo {
+        display: inline-block;
+        mask: url($logo) no-repeat;
+        mask-size: 50%;
+        background-color: $bg-color-primary;
+        width: 200px;
+        height: 15px;
+        margin: map-get($margin, large) map-get($margin, none);
+    }
+    &__contact {
+        text-decoration: none;
+        color: $bg-color-primary;
+    }
+}

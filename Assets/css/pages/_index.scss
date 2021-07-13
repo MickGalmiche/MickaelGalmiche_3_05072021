@@ -1,0 +1,22 @@
+.location {
+    text-align: center;
+    background-color: $bg-color-tertiary;
+    padding: map-get($padding, none) map-get($padding, large);
+}
+
+.overview {
+    background-color: $bg-color-secondary;
+    padding: map-get($padding, large);
+    text-align: center;
+    &__button {
+        @extend %button;
+    }
+}
+
+.function {
+    padding: map-get($padding, large);
+    ul {
+        padding: 0;
+        list-style: none;
+    }
+}
