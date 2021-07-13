@@ -9,3 +9,27 @@
         }
     }
 }
+
+@mixin for-large-mobile {
+    @media screen and (min-width: map-get($breakpoints, large-mobile)) {
+        @content;
+    }
+}
+
+@mixin for-tablet {
+    @media screen and (min-width: map-get($breakpoints, tablet)) {
+        @content;
+    }
+}
+
+@mixin for-desktop {
+    @media screen and (min-width: map-get($breakpoints, desktop)) {
+        @content;
+    }
+}
+
+@mixin for-large-desktop {
+    @media screen and (min-width: map-get($breakpoints, large-desktop)) {
+        @content;
+    }
+}

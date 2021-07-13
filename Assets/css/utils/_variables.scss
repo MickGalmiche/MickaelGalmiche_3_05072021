@@ -23,3 +23,10 @@ menu4: "../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg
 );
 
 $logo: "../images/logo/ohmyfood@2x.svg";
+
+$breakpoints: (
+    large-mobile: 600px,
+    tablet: 768px,
+    desktop: 992px,
+    large-desktop: 1200px
+);

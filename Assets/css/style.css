@@ -26,11 +26,13 @@ body {
 }
 
 .function-item {
+  flex-grow: 1;
   font-size: 0.9rem;
   font-weight: bold;
   background-color: #fafafa;
   margin: 20px;
-  padding: 20px 0;
+  padding: 20px;
+  padding-left: 0;
   border-radius: 1.4em;
   display: grid;
   grid-template-columns: 35px 35px 1fr;
@@ -178,15 +180,41 @@ body {
 }
 
 main {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .cards {
+  grid-area: cards;
   background-color: #fafafa;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media screen and (min-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: -webkit-min-content repeat(2, 1fr);
+    grid-template-rows: min-content repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: -webkit-min-content 1fr;
+    grid-template-rows: min-content 1fr;
+  }
+}
+@media screen and (min-width: 600px) {
+  .cards h2 {
+    grid-column: 1/span 2;
+  }
+}
+@media screen and (min-width: 992px) {
+  .cards h2 {
+    grid-column: 1/span 4;
+  }
 }
 
 .menu {
@@ -253,21 +281,36 @@ main {
   color: white;
 }
 
+.main-index {
+  grid-template-areas: "location" "overview" "function" "cards";
+}
+
 .location {
+  grid-area: location;
   text-align: center;
   background-color: #ebebeb;
   padding: 0 20px;
 }
 
 .overview {
+  grid-area: overview;
   background-color: #fafafa;
   padding: 20px;
   text-align: center;
 }
 .function {
+  grid-area: function;
   padding: 20px;
 }
 .function ul {
   padding: 0;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 992px) {
+  .function ul {
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }/*# sourceMappingURL=style.css.map */

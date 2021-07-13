@@ -1,6 +1,24 @@
 .cards {
+    grid-area: cards;
     background-color: $bg-color-secondary;
     padding: map-get($padding, large);
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    @include for-large-mobile {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: min-content repeat(2, 1fr);
+        gap: 20px;
+    }
+    @include for-desktop {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: min-content 1fr;
+    }
+    h2 {
+        @include for-large-mobile {
+            grid-column: 1 / span 2;
+        }
+        @include for-desktop {
+            grid-column: 1 / span 4;
+        }
+    }
 }

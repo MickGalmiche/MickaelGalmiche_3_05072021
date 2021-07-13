@@ -1,10 +1,20 @@
+.main-index {
+    grid-template-areas: 
+    "location"
+    "overview"
+    "function"
+    "cards";
+}
+
 .location {
+    grid-area: location;
     text-align: center;
     background-color: $bg-color-tertiary;
     padding: map-get($padding, none) map-get($padding, large);
 }
 
 .overview {
+    grid-area: overview;
     background-color: $bg-color-secondary;
     padding: map-get($padding, large);
     text-align: center;
@@ -14,9 +24,16 @@
 }
 
 .function {
+    grid-area: function;
     padding: map-get($padding, large);
     ul {
-        padding: 0;
+        padding: map-get($padding, none);
         list-style: none;
+        display: flex;
+        flex-direction: column;
+        @include for-desktop {
+            flex-direction: row;
+            justify-content: space-around;
+        }
     }
 }
