@@ -8,8 +8,10 @@
     margin-bottom: map-get($margin, large);
     cursor: pointer;
     @include box-shadow;
+    transition: all 200ms;
     &:hover {
         transform: scale(1.04);
+        // opacity: .8;
         background-image: linear-gradient(to bottom right, lighten($color-secondary,4%), lighten($color-primary, 4%));
         @include box-shadow($shadow-color,.6em);
     }

@@ -9,6 +9,7 @@
   margin-bottom: 20px;
   cursor: pointer;
   box-shadow: 0 0.5em 0.5em 0 #d9d9d9;
+  transition: all 200ms;
 }
 .overview__button:hover, .command__button:hover {
   transform: scale(1.04);
@@ -103,10 +104,37 @@ body {
   grid-area: captionTxt;
   margin: 0;
 }
-.card__caption div {
+.card__heart {
   grid-area: captionFav;
-  font-size: 1.4rem;
   cursor: pointer;
+  position: relative;
+  width: 20px;
+  font-size: 1.4em;
+}
+.card__heart--regular {
+  color: #b3b3b3;
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+}
+.card__heart--solid {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  color: #FF79DA;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;
+}
+.card__heart:hover > .card__heart--solid {
+  opacity: 1;
+  transform: scale(1);
+}
+.card__heart:hover > .card__heart--regular {
+  opacity: 0;
 }
 
 .menu-item {
@@ -114,11 +142,13 @@ body {
   border-radius: 0.8em;
   margin: 20px 0;
   display: grid;
-  grid-template-columns: 4fr 1fr -webkit-min-content;
-  grid-template-columns: 4fr 1fr min-content;
-  grid-template-areas: "itemTitle itemTitle itemValid" "itemDescription itemPrice itemValid";
+  grid-template-columns: 4fr -webkit-min-content 60px;
+  grid-template-columns: 4fr min-content 60px;
+  grid-template-areas: "itemTitle . itemValid" "itemDescription itemPrice itemValid";
   align-items: stretch;
   place-content: center;
+  cursor: pointer;
+  max-width: 400px;
   box-shadow: 0 0.5em 0.5em 0 #d9d9d9;
 }
 .menu-item__title {
@@ -128,6 +158,9 @@ body {
   font-size: 1.1em;
   padding-top: 12px;
   padding-left: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .menu-item__description {
   grid-area: itemDescription;
@@ -135,22 +168,43 @@ body {
   padding-left: 12px;
   padding-bottom: 12px;
   font-size: 0.9em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .menu-item__price {
   grid-area: itemPrice;
   margin: 0;
-  text-align: center;
   padding-bottom: 12px;
+  padding-right: 12px;
+  padding-left: 7px;
+  transition: transform 1000ms cubic-bezier(0.3, -0.2, 0.33, 1.1);
+  transform: translateX(40px);
+  align-self: center;
 }
 .menu-item__button {
   grid-area: itemValid;
   background-color: #99E2D0;
   color: white;
   border-radius: 0 0.5em 0.5em 0;
-  cursor: pointer;
-  display: block;
-  padding: 20px 12px;
   font-size: 1.4em;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 800ms cubic-bezier(0.2, 1, 0.9, 1);
+}
+.menu-item:hover > .menu-item__price {
+  transform: translateX(0);
+}
+.menu-item:hover > .menu-item__button {
+  transform: scaleX(1);
+}
+.menu-item:hover > .menu-item__button .fa-check-circle {
+  transform: rotate(0turn);
+}
+.menu-item .fa-check-circle {
+  padding: 20px;
+  transform: rotate(1turn);
+  transition: transform 300ms 500ms ease-in-out;
 }
 
 .command {

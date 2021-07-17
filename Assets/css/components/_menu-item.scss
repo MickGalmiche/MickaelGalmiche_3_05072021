@@ -3,12 +3,14 @@
     border-radius: .8em;
     margin: map-get($margin, large) map-get($margin, none);
     display: grid;
-    grid-template-columns: 4fr 1fr min-content;
+    grid-template-columns: 4fr min-content 60px;
     grid-template-areas:
-    "itemTitle itemTitle itemValid"
+    "itemTitle . itemValid"
     "itemDescription itemPrice itemValid";
     align-items: stretch;
     place-content: center;
+    cursor: pointer;
+    max-width: 400px;
     @include box-shadow;
     &__title {
         grid-area: itemTitle;
@@ -17,6 +19,9 @@
         font-size: 1.1em;
         padding-top: map-get($padding, medium);
         padding-left: map-get($padding, medium);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
     &__description {
         grid-area: itemDescription;
@@ -24,21 +29,46 @@
         padding-left: map-get($padding, medium);
         padding-bottom: map-get($padding, medium);
         font-size: .9em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
     &__price {
         grid-area: itemPrice;
         margin: map-get($margin, none);
-        text-align: center;
         padding-bottom: map-get($padding, medium);
+        padding-right: map-get($padding, medium );
+        padding-left: map-get($padding, small);
+        transition: transform 1000ms cubic-bezier(.3,-0.2,.33,1.1);
+        // cubic-bezier(.45,.55,.05,.65);
+        // cubic-bezier(.6,.42,.26,.91);
+        // cubic-bezier(.13,.87,.55,.86);
+        transform: translateX(40px);
+        align-self: center;
     }
     &__button {
         grid-area: itemValid;
         background-color: $color-tertiary;
         color: $bg-color-primary;
         border-radius: 0 .5em .5em 0;
-        cursor: pointer;
-        display: block;
-        padding: map-get($padding, large) map-get($padding, medium );
         font-size: 1.4em;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform 800ms cubic-bezier(.2,1,.9,1);
+    }
+
+    &:hover > .menu-item__price {
+        transform: translateX(0);
+    }
+
+    &:hover > .menu-item__button {
+        transform: scaleX(1);
+        .fa-check-circle {
+            @include check-button-hover($check-button);
+        }
+    }
+    .fa-check-circle {
+        padding: map-get($padding, large);
+        @include check-button($check-button);
     }
 }

@@ -33,3 +33,23 @@
         @content;
     }
 }
+
+@mixin check-button($version) {
+    @if ($version == "delay") {
+        transform: rotate(1turn);
+        transition: transform 300ms 500ms ease-in-out;
+    }
+    @if ($version == "nodelay") {
+        transform: translateX(60px) rotate(180deg);
+        transition: transform 800ms cubic-bezier(.2,1,.9,1);
+    }
+}
+
+@mixin check-button-hover($version) {
+    @if ($version == "delay") {
+        transform: rotate(0turn);
+    }
+    @if ($version == "nodelay") {
+        transform: translateX(0) rotate(0deg);
+    }
+}
