@@ -53,3 +53,11 @@
         transform: translateX(0) rotate(0deg);
     }
 }
+
+@mixin menu-item-delay($menuDelay) {
+    @for $item from 1 to 5 {
+        &:nth-of-type(#{$item}) {
+            animation-delay: $menuDelay + ($menu-loader-item-delay * $item);
+        }
+    }
+}

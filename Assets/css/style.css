@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap");
 .overview__button, .command__button {
   color: white;
   font-weight: bold;
@@ -20,6 +20,55 @@
   transform: scale(1);
 }
 
+@-webkit-keyframes menu-loader-vertical {
+  0% {
+    transform: translateY(-200px);
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes menu-loader-vertical {
+  0% {
+    transform: translateY(-200px);
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes menu-loader-horizontal {
+  0% {
+    transform: translateX(-200px);
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes menu-loader-horizontal {
+  0% {
+    transform: translateX(-200px);
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 body {
   margin: 0;
   font-family: "Roboto";
@@ -124,7 +173,10 @@ body {
   top: 1px;
   height: 100%;
   width: 100%;
-  color: #FF79DA;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   opacity: 0;
   transform: scale(0);
   transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;
@@ -337,7 +389,10 @@ main {
   top: 3px;
   height: 100%;
   width: 100%;
-  color: #FF79DA;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   opacity: 0;
   transform: scale(0);
   transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;
@@ -351,6 +406,16 @@ main {
 }
 .menu__appetizer, .menu__main-dish, .menu__dessert {
   padding: 0 20px;
+  transform-origin: top;
+  -webkit-animation: menu-loader-horizontal 1500ms ease-in-out forwards;
+          animation: menu-loader-horizontal 1500ms ease-in-out forwards;
+  opacity: 0;
+}
+@media screen and (min-width: 768px) {
+  .menu__appetizer, .menu__main-dish, .menu__dessert {
+    -webkit-animation-name: menu-loader-vertical;
+            animation-name: menu-loader-vertical;
+  }
 }
 .menu__appetizer h3, .menu__main-dish h3, .menu__dessert h3 {
   position: relative;
@@ -365,14 +430,80 @@ main {
   bottom: 0;
   left: 0;
 }
+.menu__appetizer article, .menu__main-dish article, .menu__dessert article {
+  transform-origin: top;
+  -webkit-animation: menu-loader-vertical 1500ms ease-in-out forwards;
+          animation: menu-loader-vertical 1500ms ease-in-out forwards;
+  opacity: 0;
+}
+@media screen and (min-width: 768px) {
+  .menu__appetizer article, .menu__main-dish article, .menu__dessert article {
+    -webkit-animation-name: menu-loader-horizontal;
+            animation-name: menu-loader-horizontal;
+  }
+}
 .menu__appetizer {
   grid-area: menuAppetizer;
+  -webkit-animation-delay: 250ms;
+          animation-delay: 250ms;
+}
+.menu__appetizer article:nth-of-type(1) {
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+}
+.menu__appetizer article:nth-of-type(2) {
+  -webkit-animation-delay: 750ms;
+          animation-delay: 750ms;
+}
+.menu__appetizer article:nth-of-type(3) {
+  -webkit-animation-delay: 1000ms;
+          animation-delay: 1000ms;
+}
+.menu__appetizer article:nth-of-type(4) {
+  -webkit-animation-delay: 1250ms;
+          animation-delay: 1250ms;
 }
 .menu__main-dish {
   grid-area: menuMainDish;
+  -webkit-animation-delay: 1500ms;
+          animation-delay: 1500ms;
+}
+.menu__main-dish article:nth-of-type(1) {
+  -webkit-animation-delay: 1750ms;
+          animation-delay: 1750ms;
+}
+.menu__main-dish article:nth-of-type(2) {
+  -webkit-animation-delay: 2000ms;
+          animation-delay: 2000ms;
+}
+.menu__main-dish article:nth-of-type(3) {
+  -webkit-animation-delay: 2250ms;
+          animation-delay: 2250ms;
+}
+.menu__main-dish article:nth-of-type(4) {
+  -webkit-animation-delay: 2500ms;
+          animation-delay: 2500ms;
 }
 .menu__dessert {
   grid-area: menuDessert;
+  -webkit-animation-delay: 2750ms;
+          animation-delay: 2750ms;
+}
+.menu__dessert article:nth-of-type(1) {
+  -webkit-animation-delay: 3000ms;
+          animation-delay: 3000ms;
+}
+.menu__dessert article:nth-of-type(2) {
+  -webkit-animation-delay: 3250ms;
+          animation-delay: 3250ms;
+}
+.menu__dessert article:nth-of-type(3) {
+  -webkit-animation-delay: 3500ms;
+          animation-delay: 3500ms;
+}
+.menu__dessert article:nth-of-type(4) {
+  -webkit-animation-delay: 3750ms;
+          animation-delay: 3750ms;
 }
 .menu__command {
   grid-area: menuCommand;

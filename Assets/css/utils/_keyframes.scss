@@ -1,0 +1,29 @@
+@keyframes menu-loader-vertical {
+    0% {
+        transform: translateY(-$menu-loader-translate);
+    }
+
+    70% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes menu-loader-horizontal {
+    0% {
+        transform: translateX(-$menu-loader-translate);
+    }
+
+    60% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

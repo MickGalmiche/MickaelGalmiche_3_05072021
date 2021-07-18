@@ -64,10 +64,11 @@
             top: 3px;
             height: 100%;
             width: 100%;
-            // background-image: linear-gradient(to bottom right, $color-secondary, $color-primary );
-            // -webkit-background-clip: text;
-            // -webkit-text-fill-color: transparent;
-            color: $color-secondary;
+            background: linear-gradient(to bottom right, $color-secondary, $color-primary );
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            // color: $color-secondary;
             opacity: 0;
             transform: scale(0);
             transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;
@@ -84,6 +85,13 @@
     
     &__appetizer, &__main-dish, &__dessert {
         padding: map-get($padding, none) map-get($padding, large);
+        transform-origin: top;
+        animation: menu-loader-horizontal $menu-loader-duration ease-in-out forwards;
+        opacity: 0;
+
+        @include for-tablet {
+            animation-name: menu-loader-vertical;
+        }
 
         h3{
             position: relative;
@@ -99,18 +107,43 @@
             left: 0;
             }
         }
+
+        article {
+            transform-origin: top;
+            animation: menu-loader-vertical $menu-loader-duration ease-in-out forwards;
+            opacity: 0;
+
+            @include for-tablet {
+                animation-name: menu-loader-horizontal;
+            }
+        }
     }
 
     &__appetizer {
         grid-area: menuAppetizer;
+        animation-delay: $menu-loader-delay;
+
+        article {
+            @include menu-item-delay($menu-loader-delay);
+        }
     }
 
     &__main-dish {
         grid-area: menuMainDish;
+        animation-delay: $menu-loader-duration;
+
+        article {
+            @include menu-item-delay($menu-loader-duration);
+        }
     }
 
     &__dessert {
         grid-area: menuDessert;
+        animation-delay: ($menu-loader-duration*2 - $menu-loader-delay);
+
+        article {
+            @include menu-item-delay($menu-loader-duration*2 - $menu-loader-delay);
+        }
     }
 
     &__command {
