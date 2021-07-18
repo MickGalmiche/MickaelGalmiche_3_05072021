@@ -155,10 +155,10 @@ body {
 }
 .card__heart {
   grid-area: captionFav;
-  cursor: pointer;
-  position: relative;
   width: 20px;
   font-size: 1.4em;
+  cursor: pointer;
+  position: relative;
 }
 .card__heart--regular {
   color: #b3b3b3;
@@ -372,9 +372,9 @@ main {
   font-family: "Shrikhand";
 }
 .menu__heart {
+  display: inline-block;
   cursor: pointer;
   position: relative;
-  display: inline-block;
 }
 .menu__heart--regular {
   color: #b3b3b3;

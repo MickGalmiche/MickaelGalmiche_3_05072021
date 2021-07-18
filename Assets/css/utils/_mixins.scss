@@ -61,3 +61,38 @@
         }
     }
 }
+
+@mixin heart-icon($top: 0) {
+    cursor: pointer;
+    position: relative;
+    &--regular {
+        color: darken($bg-color-primary, 30%);
+        opacity: 1;
+        transition: opacity 500ms ease-in-out;
+    }
+    &--solid {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        top: $top;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(to bottom right, $color-secondary, $color-primary );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        // color: $color-secondary;
+        opacity: 0;
+        transform: scale(0);
+        transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;
+    }
+    &:hover > &--solid {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    &:hover > &--regular {
+        opacity: 0;
+    }
+}
