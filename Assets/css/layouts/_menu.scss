@@ -1,8 +1,35 @@
 .menu {
     background-color: $bg-color-secondary;
+    justify-items: center;
+    grid-template-areas: 
+    "menuHeading"
+    "menuAppetizer"
+    "menuMainDish"
+    "menuDessert"
+    "menuCommand";
+
+    @include for-tablet{
+        grid-template-areas: 
+        "menuHeading menuHeading"
+        "menuAppetizer menuMainDish"
+        "menuDessert menuDessert"
+        "menuCommand menuCommand";
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include for-desktop {
+        grid-template-areas: 
+        "menuHeading menuHeading menuHeading"
+        "menuAppetizer menuMainDish menuDessert"
+        ". menuCommand .";
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     &__heading {
+        grid-area: menuHeading;
         background-size: cover;
         height: 400px;
+        width: 100%;
         display: flex;
         justify-content: flex-end;
         flex-direction: column;
@@ -19,7 +46,74 @@
         align-items: center;
         font-family: $font-secondary;
     }
+
+    &__heart {
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        &--regular {
+            color: darken($bg-color-primary, 30%);
+            opacity: 1;
+            transition: opacity 500ms ease-in-out;
+        }
+        &--solid {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            top: 3px;
+            height: 100%;
+            width: 100%;
+            // background-image: linear-gradient(to bottom right, $color-secondary, $color-primary );
+            // -webkit-background-clip: text;
+            // -webkit-text-fill-color: transparent;
+            color: $color-secondary;
+            opacity: 0;
+            transform: scale(0);
+            transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;
+        }
+        &:hover > .menu__heart--solid {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        &:hover > .menu__heart--regular {
+            opacity: 0;
+        }
+    }
+    
     &__appetizer, &__main-dish, &__dessert {
         padding: map-get($padding, none) map-get($padding, large);
+
+        h3{
+            position: relative;
+            padding-bottom: map-get($padding, small );
+
+            &::after {
+            content: "";
+            width: 50px;
+            height: 3px;
+            background-color: $color-tertiary;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            }
+        }
+    }
+
+    &__appetizer {
+        grid-area: menuAppetizer;
+    }
+
+    &__main-dish {
+        grid-area: menuMainDish;
+    }
+
+    &__dessert {
+        grid-area: menuDessert;
+    }
+
+    &__command {
+        grid-area: menuCommand;
     }
 }

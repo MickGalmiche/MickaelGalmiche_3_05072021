@@ -31,7 +31,7 @@ body {
   font-size: 0.9rem;
   font-weight: bold;
   background-color: #fafafa;
-  margin: 20px;
+  margin: 20px 10px;
   padding: 20px;
   padding-left: 0;
   border-radius: 1.4em;
@@ -121,7 +121,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  top: 0;
+  top: 1px;
   height: 100%;
   width: 100%;
   color: #FF79DA;
@@ -273,10 +273,26 @@ main {
 
 .menu {
   background-color: #fafafa;
+  justify-items: center;
+  grid-template-areas: "menuHeading" "menuAppetizer" "menuMainDish" "menuDessert" "menuCommand";
+}
+@media screen and (min-width: 768px) {
+  .menu {
+    grid-template-areas: "menuHeading menuHeading" "menuAppetizer menuMainDish" "menuDessert menuDessert" "menuCommand menuCommand";
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 992px) {
+  .menu {
+    grid-template-areas: "menuHeading menuHeading menuHeading" "menuAppetizer menuMainDish menuDessert" ". menuCommand .";
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 .menu__heading {
+  grid-area: menuHeading;
   background-size: cover;
   height: 400px;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
@@ -303,32 +319,100 @@ main {
   align-items: center;
   font-family: "Shrikhand";
 }
+.menu__heart {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+.menu__heart--regular {
+  color: #b3b3b3;
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+}
+.menu__heart--solid {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 3px;
+  height: 100%;
+  width: 100%;
+  color: #FF79DA;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;
+}
+.menu__heart:hover > .menu__heart--solid {
+  opacity: 1;
+  transform: scale(1);
+}
+.menu__heart:hover > .menu__heart--regular {
+  opacity: 0;
+}
 .menu__appetizer, .menu__main-dish, .menu__dessert {
   padding: 0 20px;
+}
+.menu__appetizer h3, .menu__main-dish h3, .menu__dessert h3 {
+  position: relative;
+  padding-bottom: 7px;
+}
+.menu__appetizer h3::after, .menu__main-dish h3::after, .menu__dessert h3::after {
+  content: "";
+  width: 50px;
+  height: 3px;
+  background-color: #99E2D0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.menu__appetizer {
+  grid-area: menuAppetizer;
+}
+.menu__main-dish {
+  grid-area: menuMainDish;
+}
+.menu__dessert {
+  grid-area: menuDessert;
+}
+.menu__command {
+  grid-area: menuCommand;
 }
 
 .footer {
   background-color: #333333;
   color: white;
-  padding-bottom: 20px;
+  padding: 20px;
 }
 .footer ul {
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+}
+@media screen and (min-width: 768px) {
+  .footer ul {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
 }
 .footer ul li {
   list-style: none;
   padding: 2px;
 }
+.footer ul li .fas {
+  width: 20px;
+}
 .footer__logo {
   display: inline-block;
   -webkit-mask: url("../images/logo/ohmyfood@2x.svg") no-repeat;
           mask: url("../images/logo/ohmyfood@2x.svg") no-repeat;
-  -webkit-mask-size: 50%;
-          mask-size: 50%;
+  -webkit-mask-size: 100%;
+          mask-size: 100%;
   background-color: white;
-  width: 200px;
-  height: 15px;
-  margin: 20px 0;
+  width: 98px;
+  height: 17px;
+  margin: 10px;
 }
 .footer__contact {
   text-decoration: none;
