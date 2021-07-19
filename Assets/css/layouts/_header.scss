@@ -6,10 +6,11 @@
     align-items: center;
     @include box-shadow;
     &__title {
+        font-family: $font-secondary;
         grid-area: headerLogo;
         margin: 0;
-        padding-top: map-get($padding, large);
-        padding-bottom: map-get($padding, medium);
+        padding: map-get($padding, large);
+        // padding-bottom: map-get($padding, medium);
     }
     a {
         color: darken($bg-color-primary, 100%);

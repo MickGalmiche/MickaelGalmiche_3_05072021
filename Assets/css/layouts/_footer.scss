@@ -25,8 +25,9 @@
     }
     &__logo {
         display: inline-block;
-        mask: url($logo) no-repeat;
+        mask-image: url($logo);
         mask-size: 100%;
+        mask-repeat: no-repeat;
         background-color: $bg-color-primary;
         width: 98px;
         height: 17px;
