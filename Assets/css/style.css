@@ -1,13 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap");
 .overview__button, .command__button {
+  display: inline-block;
+  text-decoration: none;
   color: white;
   font-weight: bold;
   background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
   border: none;
   border-radius: 1.5rem;
   padding: 12px 20px;
-  margin-bottom: 20px;
-  cursor: pointer;
+  margin: 20px;
   box-shadow: 0 0.5em 0.5em 0 #d9d9d9;
   transition: all 200ms;
 }
@@ -465,14 +466,17 @@ body {
 }
 
 .card {
-  margin: 20px 0;
+  margin: 0;
   background-color: white;
   border-radius: 0.7em;
   box-shadow: 0 0.5em 0.5em 0 #d9d9d9;
 }
+.card__link {
+  text-decoration: none;
+  color: black;
+}
 .card__body {
   position: relative;
-  display: block;
 }
 .card__img {
   width: 100%;
@@ -503,10 +507,12 @@ body {
 .card__caption h3 {
   grid-area: captionTitle;
   margin: 0;
+  text-decoration: none;
 }
 .card__caption p {
   grid-area: captionTxt;
   margin: 0;
+  text-decoration: none;
 }
 .card__heart {
   grid-area: captionFav;
@@ -528,10 +534,7 @@ body {
   top: 1px;
   height: 100%;
   width: 100%;
-  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #FF79DA;
   opacity: 0;
   transform: scale(0);
   transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;
@@ -651,6 +654,7 @@ main {
   padding: 20px;
   display: grid;
   grid-template-columns: 1fr;
+  row-gap: 20px;
 }
 @media screen and (min-width: 600px) {
   .cards {
@@ -744,10 +748,7 @@ main {
   top: 3px;
   height: 100%;
   width: 100%;
-  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #FF79DA;
   opacity: 0;
   transform: scale(0);
   transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;

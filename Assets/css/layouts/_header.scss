@@ -5,6 +5,7 @@
     justify-items: center;
     align-items: center;
     @include box-shadow;
+
     &__title {
         font-family: $font-secondary;
         grid-area: headerLogo;
@@ -12,9 +13,11 @@
         padding: map-get($padding, large);
         // padding-bottom: map-get($padding, medium);
     }
+
     a {
         color: darken($bg-color-primary, 100%);
     }
+    
     &__arrow {
         grid-area: headerArrow;
         font-size: 1.2rem;

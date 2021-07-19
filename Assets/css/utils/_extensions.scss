@@ -1,12 +1,13 @@
 %button {
+    display: inline-block;
+    text-decoration: none;
     color: $bg-color-primary;
     font-weight: bold;
     background-image: linear-gradient(to bottom right, $color-secondary, $color-primary );
     border: none;
     border-radius: 1.5rem;
     padding: map-get($padding, medium) map-get($padding, large);
-    margin-bottom: map-get($margin, large);
-    cursor: pointer;
+    margin: map-get($margin, large);
     @include box-shadow;
     transition: all 200ms;
     &:hover {
