@@ -9,6 +9,14 @@ $bg-color-tertiary: darken($bg-color-primary, 8%);
 $font-primary: 'Roboto';
 $font-secondary: 'Shrikhand';
 
+$font-family: (
+    bold: "RobotoBold",
+    regular: "Roboto",
+    thin: "RobotoThin",
+    light: "RobotoLight",
+    medium: "RobotoMedium"
+);
+
 $shadow-color: darken($bg-color-primary, 15%);
 $shadow-size: .5em;
 

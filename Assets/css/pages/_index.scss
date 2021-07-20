@@ -18,6 +18,16 @@
     background-color: $bg-color-secondary;
     padding: map-get($padding, large);
     text-align: center;
+
+    &__title {
+        font-family: map-get($font-family, bold);
+    }
+
+    &__txt {
+        font-family: map-get($font-family, light);
+        font-size: 1.2em;
+    }
+
     &__button {
         @extend %button;
     }

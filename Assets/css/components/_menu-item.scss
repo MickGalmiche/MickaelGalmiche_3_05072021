@@ -28,6 +28,7 @@
         margin: 0;
         padding-left: map-get($padding, medium);
         padding-bottom: map-get($padding, medium);
+        font-family: map-get($font-family, light);
         font-size: .9em;
         overflow: hidden;
         text-overflow: ellipsis;
