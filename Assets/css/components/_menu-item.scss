@@ -9,6 +9,7 @@
     "itemDescription itemPrice itemValid";
     align-items: stretch;
     place-content: center;
+    gap: 5px;
     cursor: pointer;
     max-width: 400px;
     @include box-shadow;
@@ -28,8 +29,7 @@
         margin: 0;
         padding-left: map-get($padding, medium);
         padding-bottom: map-get($padding, medium);
-        font-family: map-get($font-family, light);
-        font-size: .9em;
+        font-weight: map-get($font-weight, light);
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -46,6 +46,7 @@
         // cubic-bezier(.13,.87,.55,.86);
         transform: translateX(40px);
         align-self: center;
+        font-weight: map-get($font-weight, medium);
     }
     &__button {
         grid-area: itemValid;

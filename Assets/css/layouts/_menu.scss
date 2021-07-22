@@ -65,6 +65,7 @@
         h3{
             position: relative;
             padding-bottom: map-get($padding, small );
+            font-weight: map-get($font-weight, light);
 
             &::after {
             content: "";

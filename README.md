@@ -1,8 +1,7 @@
 # OhMyFood - projet Openclassrooms
 Troisième projet du parcours ***développeur web*** chez **OpenClassrooms**, dont l'objectif est de réaliser un site web pour la startup Ohmyfood! et le dynamiser à l'aide d'animations CSS. Orienté à 100% vers les mobiles, il répertorie les menus de restaurants gastronomiques.
 
-
-![maquette web ohmyfood](Assets/images/ohmyfood.gif)
+![maquette web ohmyfood](Assets/images/ohmyfood.png)
 
 ## Éléments fournis par l'entreprise virtuelle.
 - Un logo sous deux formats (svg et png).
@@ -34,6 +33,8 @@ Troisième projet du parcours ***développeur web*** chez **OpenClassrooms**, do
     - Présent sur toutes les pages.
     - Ne contient que le logo sur la page d'accueil.
     - Contient un bouton de retour en plus du logo sur les autres pages.
+
+![maquette loader ohmyfood](Assets/images/ohmyfood.gif)
 
 ### Animations et effets graphiques
 Réalisées uniquement à partir de CSS (transition et animation). Javascript n'est pas autorisé. 

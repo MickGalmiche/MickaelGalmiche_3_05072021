@@ -1,7 +1,7 @@
 .function-item{
     flex-grow: 1;
     font-size: .9rem;
-    font-weight: bold;
+    font-weight: map-get($font-weight, medium);
     background-color: $bg-color-secondary;
     margin: map-get($margin, large) map-get($margin, medium);
     padding: map-get($padding, large);

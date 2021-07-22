@@ -20,11 +20,11 @@
     text-align: center;
 
     &__title {
-        font-family: map-get($font-family, bold);
+        font-weight: bold;
     }
 
     &__txt {
-        font-family: map-get($font-family, light);
+        font-weight: map-get($font-weight, light);
         font-size: 1.2em;
     }
 

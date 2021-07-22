@@ -6,15 +6,14 @@ $bg-color-primary: white;
 $bg-color-secondary: darken($bg-color-primary, 2%);
 $bg-color-tertiary: darken($bg-color-primary, 8%);
 
-$font-primary: "Roboto";
-$font-secondary: "Shrikhand";
+$font-primary: "Roboto", sans-serif;
+$font-secondary: "Shrikhand", cursive;
 
-$font-family: (
-    bold: "RobotoBold",
-    regular: "Roboto",
-    thin: "RobotoThin",
-    light: "RobotoLight",
-    medium: "RobotoMedium"
+$font-weight: (
+    black: 900,
+    medium: 500,
+    light: 300,
+    thin: 100
 );
 
 $shadow-color: darken($bg-color-primary, 15%);
