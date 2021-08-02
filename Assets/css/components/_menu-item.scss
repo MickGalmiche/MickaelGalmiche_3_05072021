@@ -2,19 +2,22 @@
     background-color: $bg-color-primary;
     border-radius: .8em;
     margin: map-get($margin, large) map-get($margin, none);
-    display: grid;
-    grid-template-columns: 260px 0px 60px;
-    grid-template-areas:
-    "itemTitle itemTitle itemValid"
-    "itemDescription itemPrice itemValid";
-    align-items: stretch;
-    place-content: center;
-    row-gap: 5px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
     cursor: pointer;
     width: 320px;
-    height: 66px;
     @include box-shadow;
-    transition: all 800ms;
+
+    &__main {
+        flex-grow: 1;
+        display: grid;
+        grid-template-areas: 
+        "itemTitle itemTitle"
+        "itemDescription itemPrice";
+        grid-template-columns: 1fr 60px;
+    }
+
     &__title {
         grid-area: itemTitle;
         margin: 0;
@@ -37,45 +40,35 @@
         text-overflow: ellipsis;
         white-space: nowrap;
     }
+
     &__price {
         grid-area: itemPrice;
         margin: map-get($margin, none);
         padding-bottom: map-get($padding, medium);
         padding-right: map-get($padding, medium );
         padding-left: map-get($padding, small);
-        //transition: transform 1000ms cubic-bezier(.3,-0.2,.33,1.1);
-        // cubic-bezier(.45,.55,.05,.65);
-        // cubic-bezier(.6,.42,.26,.91);
-        // cubic-bezier(.13,.87,.55,.86);
-        //transform: translateX(40px);
         align-self: center;
         font-weight: map-get($font-weight, medium);
     }
+
     &__button {
-        grid-area: itemValid;
-        width: 60px;
+        width: 0%;
+        transition: all 800ms;
         background-color: $color-tertiary;
         color: $bg-color-primary;
         border-radius: 0 .5em .5em 0;
         font-size: 1.4em;
-        transform-origin: right;
-        transform: scaleX(0);
-        transition: transform 800ms cubic-bezier(.2,1,.9,1);
+        //transform-origin: right;
+        //transform: scaleX(0);
+        //transition: transform 800ms cubic-bezier(.2,1,.9,1);
     }
 
-    /*&:hover > .menu-item__price {
-        transform: translateX(0);
-    }*/
-
     &:hover > .menu-item__button {
-        transform: scaleX(1);
+        //transform: scaleX(1);
+        width: 20%;
         .fa-check-circle {
             @include check-button-hover($check-button);
         }
-    }
-
-    &:hover {
-        grid-template-columns: 200px 60px 60px;
     }
 
     .fa-check-circle {
