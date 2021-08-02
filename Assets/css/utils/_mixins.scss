@@ -40,7 +40,7 @@
         transition: transform 300ms 500ms ease-in-out;
     }
     @if ($version == "nodelay") {
-        transform: translateX(60px) rotate(180deg);
+        transform: translateX(60px) rotate(-540deg);
         transition: transform 800ms cubic-bezier(.2,1,.9,1);
     }
 }
@@ -62,11 +62,21 @@
     }
 }
 
+@mixin heart-icon-color($color) {
+    @if ($color == "gradient") {
+        background: linear-gradient(to bottom right, $color-secondary, $color-primary );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    } @else {
+        color: $color-secondary;
+    }
+}
+
 @mixin heart-icon($top: 0) {
     cursor: pointer;
     position: relative;
     &--regular {
-        color: darken($bg-color-primary, 30%);
+        color: darken($bg-color-primary, 100%);
         opacity: 1;
         transition: opacity 500ms ease-in-out;
     }
@@ -78,11 +88,7 @@
         top: $top;
         height: 100%;
         width: 100%;
-        // background: linear-gradient(to bottom right, $color-secondary, $color-primary );
-        // background-clip: text;
-        // -webkit-background-clip: text;
-        // -webkit-text-fill-color: transparent;
-        color: $color-secondary;
+        @include heart-icon-color($heart-color);
         opacity: 0;
         transform: scale(0);
         transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;

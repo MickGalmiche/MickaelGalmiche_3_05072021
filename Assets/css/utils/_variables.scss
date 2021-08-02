@@ -38,8 +38,10 @@ $breakpoints: (
     large-desktop: 1200px
 );
 
-$check-button: "delay"; 
+$check-button: "nodelay"; 
 // delay/nodelay
+$heart-color: "gradient";
+// gradient/""
 
 $menu-loader-duration: 1500ms;
 $menu-loader-delay: 250ms;
