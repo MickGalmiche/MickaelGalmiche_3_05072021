@@ -600,8 +600,23 @@ body {
   flex-flow: row nowrap;
   justify-content: space-between;
   cursor: pointer;
-  width: 320px;
   box-shadow: 0 0.5em 0.5em 0 #d9d9d9;
+  width: 280px;
+}
+@media screen and (min-width: 600px) {
+  .menu-item {
+    width: 340px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .menu-item {
+    width: 280px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .menu-item {
+    width: 340px;
+  }
 }
 .menu-item__main {
   flex-grow: 1;
@@ -646,6 +661,9 @@ body {
   color: white;
   border-radius: 0 0.5em 0.5em 0;
   font-size: 1.4em;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 .menu-item:hover > .menu-item__button {
   width: 20%;
@@ -655,10 +673,10 @@ body {
   transform: rotate(0deg);
 }
 .menu-item .fa-check-circle {
-  padding: 20px;
   transform: rotate(-540deg);
   opacity: 0;
   transition: all 800ms cubic-bezier(0.2, 1, 0.9, 1);
+  align-self: center;
 }
 
 .command {
@@ -677,7 +695,7 @@ body {
   font-family: "Shrikhand", cursive;
   grid-area: headerLogo;
   margin: 0;
-  padding: 20px;
+  padding: 20px 0;
 }
 .header a {
   color: black;
@@ -737,7 +755,7 @@ main {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1200px) {
   .menu {
     grid-template-areas: "menuHeading menuHeading menuHeading" "menuAppetizer menuMainDish menuDessert" ". menuCommand .";
     grid-template-columns: repeat(3, 1fr);
@@ -746,11 +764,16 @@ main {
 .menu__heading {
   grid-area: menuHeading;
   background-size: cover;
-  height: 400px;
+  height: 200px;
   width: 100%;
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .menu__heading {
+    height: 300px;
+  }
 }
 .menu__heading--laPaletteDuGout {
   background-image: url("../images/restaurants/3_medium/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
@@ -767,7 +790,7 @@ main {
 .menu__title {
   background-color: #fafafa;
   border-radius: 1.8em 1.8em 0 0;
-  padding: 20px;
+  padding: 20px 0;
   margin: 0;
   display: flex;
   justify-content: space-around;
@@ -807,7 +830,6 @@ main {
   opacity: 0;
 }
 .menu__appetizer, .menu__main-dish, .menu__dessert {
-  padding: 0 20px;
   transform-origin: top;
   -webkit-animation: menu-loader-horizontal 1500ms ease-in-out forwards;
           animation: menu-loader-horizontal 1500ms ease-in-out forwards;

@@ -6,8 +6,18 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     cursor: pointer;
-    width: 320px;
     @include box-shadow;
+
+    width: 280px;
+    @include for-large-mobile {
+        width: 340px;
+    }
+    @include for-tablet {
+        width: 280px;
+    }
+    @include for-desktop {
+        width: 340px;
+    }
 
     &__main {
         flex-grow: 1;
@@ -61,6 +71,9 @@
         //transform-origin: right;
         //transform: scaleX(0);
         //transition: transform 800ms cubic-bezier(.2,1,.9,1);
+        display: flex;
+        justify-content: center;
+        align-content: center;
     }
 
     &:hover > .menu-item__button {
@@ -72,7 +85,8 @@
     }
 
     .fa-check-circle {
-        padding: map-get($padding, large);
+        //padding: map-get($padding, large);
         @include check-button($check-button);
+        align-self: center;
     }
 }

@@ -17,7 +17,7 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    @include for-desktop {
+    @include for-large-desktop {
         grid-template-areas: 
         "menuHeading menuHeading menuHeading"
         "menuAppetizer menuMainDish menuDessert"
@@ -28,7 +28,10 @@
     &__heading {
         grid-area: menuHeading;
         background-size: cover;
-        height: 400px;
+        height: 200px;
+        @include for-tablet {
+            height: 300px;
+        }
         width: 100%;
         display: flex;
         justify-content: flex-end;
@@ -39,7 +42,7 @@
     &__title {
         background-color: $bg-color-secondary;
         border-radius: 1.8em 1.8em 0 0;
-        padding: map-get($padding, large);
+        padding: map-get($padding, large) map-get($padding, none );
         margin: map-get($margin, none);
         display: flex;
         justify-content: space-around;
@@ -53,7 +56,6 @@
     }
     
     &__appetizer, &__main-dish, &__dessert {
-        padding: map-get($padding, none) map-get($padding, large);
         transform-origin: top;
         animation: menu-loader-horizontal $menu-loader-duration ease-in-out forwards;
         opacity: 0;

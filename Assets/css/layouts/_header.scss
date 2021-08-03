@@ -10,8 +10,7 @@
         font-family: $font-secondary;
         grid-area: headerLogo;
         margin: 0;
-        padding: map-get($padding, large);
-        // padding-bottom: map-get($padding, medium);
+        padding: map-get($padding, large) map-get($padding, none );
     }
 
     a {
