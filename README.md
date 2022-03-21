@@ -51,7 +51,7 @@ Les maquettes définissent les effets souhaités.
 - Séparer le code HTML et CSS et organiser le dossier de rendu.
 - Utilisation du préprocesseur CSS Sass recommandée.
 - Pas d'utilisation de framework (ex: Bootstrap) ou javascript.
-- Utiliser les balises sémantiques et n'avoir aucune erreur ni alerte au validateur W3C [HTML](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmickgalmiche.github.io%2FMickaelGalmiche_3_05072021%2F) et [CSS.](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmickgalmiche.github.io%2FMickaelGalmiche_3_05072021%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=fr)
+- Utiliser les balises sémantiques et n'avoir aucune erreur ni alerte au validateur W3C [HTML](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmickgalmiche.github.io%2FOC_OhMyFood%2F) et [CSS.](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmickgalmiche.github.io%2FOC_OhMyFood%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=fr)
 - Site compatible avec les dernières versions de Chrome et Firefox.
-- Versionner le code avec Git. Le déployer dans un [repository distant](https://github.com/MickGalmiche/MickaelGalmiche_3_05072021) et sur les [pages de Github ou Gitlab.](https://mickgalmiche.github.io/MickaelGalmiche_3_05072021/)
+- Versionner le code avec Git. Le déployer dans un [repository distant](https://github.com/MickGalmiche/OC_OhMyFood) et sur les [pages de Github ou Gitlab.](https://mickgalmiche.github.io/OC_OhMyFood/)
 
